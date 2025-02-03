@@ -19,9 +19,27 @@ class Time {
 
     //add method
     Time add(const Time& other) {
-        int returnHours = (hours + other.hours);
-        int returnMinutes = (minutes + other.minutes);
-        int returnSeconds = (seconds + other.seconds);
+        int returnHours = ((hours + other.hours) % 24);
+
+        int returnMinutes;
+        if((minutes + other.minutes) < 60){
+            returnMinutes = (minutes + other.minutes);
+        }
+        else if((minutes + other.minutes) >= 60){
+            returnHours += (minutes + other.minutes) / 60;
+            returnMinutes =  (minutes + other.minutes) % 60;
+        }
+        // int returnMinutes = (minutes + other.minutes);
+
+
+        int returnSeconds;
+        if((seconds + other.seconds) < 60){
+            returnSeconds = (seconds + other.seconds);
+        }
+        else if((seconds + other.seconds) >= 60 && (seconds + other.seconds) >= 3600 ){
+            returnHours += (minutes + other.minutes) / 3600;
+            returnSeconds =  (minutes + other.minutes) % 3600;
+        }
         return Time(returnHours, returnMinutes, returnSeconds);
     }
 };
