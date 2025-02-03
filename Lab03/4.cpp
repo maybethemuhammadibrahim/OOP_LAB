@@ -7,10 +7,9 @@ class Angle {
     int degrees;
     float minutes;
     char dirLetter;
-    bool lat_long;
     public:
     //constructor
-    Angle(): degrees(0), minutes(0), dirLetter(0), lat_long(0) {}
+    Angle(): degrees(0), minutes(0), dirLetter(0) {}
 
     //setters
     void setDegrees(int degrees){
@@ -22,9 +21,6 @@ class Angle {
     void setDirLetter(char dirLetter){
         this->dirLetter = dirLetter;
     }
-    void set_lat_long(bool lat_long){
-        this->lat_long = lat_long;
-    }
 
     void getInput(){
         int tempD; float tempM; char tempL; bool temp;
@@ -34,13 +30,16 @@ class Angle {
         cin >> tempM; setMinutes(tempM);
         cout << "Enter the dirLetter " << endl;
         cin >> tempL; setDirLetter(tempL);
-        // cout << "Enter 1 for Latitude coords/Enter 0 for Longitude coords" << endl;
-        // cin >> temp; set_lat_long(tempD);
     }
 
     void displayAngle(){
         cout << degrees << "\xF8" << minutes << "'" << dirLetter << "    ";
-        cout << endl;
+        if(dirLetter == 'w' || dirLetter == 'W' || dirLetter == 'e' || dirLetter == 'E'){
+            cout << "Longitude" << endl;
+        }
+        if(dirLetter == 'n' || dirLetter == 'N' || dirLetter == 's' || dirLetter == 'S'){
+            cout << "Latitude" << endl;
+        }
     }
 };
 
