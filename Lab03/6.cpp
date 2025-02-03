@@ -1,22 +1,4 @@
-/*
-Create a class called Smartphone with the following attributes:
- Company
- Model
- Display Resolution
- RAM
- ROM
- Storage
 
-Create getter and setter methods for your attributes. A smartphone has some specific actions that it can perform.
-For example:
-1. Make a phone call
-2. Send a message
-3. Connect to the wifi
-4. Browse the internet
-
-Create different smartphone objects. Set their attributes using the setter functions and display their attributes after
-using the getter functions to fetch the attributes.
-*/
 
 #include <iostream>
 using namespace std;
@@ -33,26 +15,81 @@ class Smartphone {
     public:
     Smartphone(): company("no-data"), model("no-data"), displayResolution("no-data"), ram(0), rom(0), storage(0) {}
 
-    void getCompany(string company){
+    //setters
+    void setCompany(string company){
         this->company = company;
     }
-    void getModel(string model){
+    void setModel(string model){
         this->model = model;
     }
-    void getDisplayResolution(string displayResolution){
-        this->company = company;
+    void setDisplayResolution(string displayResolution){
+        this->displayResolution = displayResolution;
     }
-    void getCompany(string company){
-        this->company = company;
+    void setRam(float ram){
+        this->ram = ram;
     }
-    void getCompany(string company){
-        this->company = company;
+    void setRom(float rom){
+        this->rom = rom;
     }
-    void getCompany(string company){
-        this->company = company;
+    void setStorage(float storage){
+        this->storage = storage;
     }
+
+
+    // getters
+    string getCompany(){
+        return company;
+    }
+    string getModel(){
+        return model;
+    }
+    string getDisplayResolution(){
+        return displayResolution;
+    }
+    float getRam(){
+        return ram;
+    }
+    float getRom(){
+        return rom;
+    }
+    float getStorage(){
+        return storage;
+    }
+
+    //methods
+    void makeAPhoneCall(){
+        cout << "Making a phone call" << endl;
+    }
+    void sendAMessage(){
+        cout << "Sending a message" << endl;
+    }
+    void connectToWifi(){
+        cout << "Connecting to wifi" << endl;
+    }
+    void browseTheInternet(){
+        cout << "Browsing the internet" << endl;
+    }
+    
 };
 
 int main() {
+    Smartphone s1,s2,s3;
+    s1.setCompany("Samsung");
+    s1.setModel("s24");
+    s1.setDisplayResolution("1080p");
+    s1.setRam(4024);
+    s1.setRom(10);
+    s1.setStorage(128);
+
+
+    s1.getCompany();
+    s1.getModel();
+    s1.getDisplayResolution();
+    s1.getRam();
+    s1.getRom();
+    s1.getStorage();
+
+
+          
 
 }
