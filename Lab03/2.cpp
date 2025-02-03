@@ -31,8 +31,9 @@ int main() {
 
     cout << "Toll Management System" << endl;
     cout << "======================" << endl;
+    cout << "Enter 0, if car has not paid toll money" << endl;
     cout << "Enter 1, if car has paid toll money" << endl;
-    cout << "Enter 0 if car has not paid toll money" << endl;
+    cout << "Enter 2, to display data" << endl;
 
     while(input != 27){
         cout << "->";
