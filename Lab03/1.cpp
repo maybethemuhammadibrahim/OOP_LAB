@@ -19,7 +19,7 @@ class Time {
 
     //add method
     Time add(const Time& other) {
-        int returnHours = ((hours + other.hours) % 24);
+        int returnHours = ((hours + other.hours) % 12);
 
         int returnMinutes;
         if((minutes + other.minutes) < 60){
@@ -36,17 +36,21 @@ class Time {
         if((seconds + other.seconds) < 60){
             returnSeconds = (seconds + other.seconds);
         }
-        else if((seconds + other.seconds) >= 60 && (seconds + other.seconds) >= 3600 ){
-            returnHours += (minutes + other.minutes) / 3600;
-            returnSeconds =  (minutes + other.minutes) % 3600;
+        else if((seconds + other.seconds) >= 60 && (seconds + other.seconds) <= 3600 ){
+            returnMinutes += (seconds + other.seconds) / 60;
+            returnSeconds =  (seconds + other.seconds) % 60;
+        }
+        else if((seconds + other.seconds) >= 3600 ){
+            returnHours += (seconds + other.seconds) / 3600;
+            returnSeconds =  (seconds + other.seconds) % 3600;
         }
         return Time(returnHours, returnMinutes, returnSeconds);
     }
 };
 
 int main(){
-    Time t1(2,2,40);
-    Time t2(3,3,20);
+    Time t1(1,55,0);
+    Time t2(11,5,0);
     Time t3;
 
     t3 = t1.add(t2);
