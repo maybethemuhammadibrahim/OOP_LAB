@@ -1,34 +1,3 @@
-/*
-A bank provides different types of accounts, such as Savings Account and Current Account.
-Each account has a method to calculate the annual interest, but the formula differs for different
-account types.
-Additionally, the bank allows overloading the deposit method to handle different types of
-deposits (cash, check, online transfer). The withdraw method is overridden to implement specific
-rules for different accounts.
-Moreover, the bank maintains customer balances in an object, and it supports operator
-overloading for addition (+), subtraction (-), multiplication (*), and division (/) to handle
-balance calculations efficiently.
-Task Requirements:
-1. Create a base class BankAccount with attributes like accountNumber, balance, and a
-virtual function calculateInterest().
-2. Implement two derived classes:
-o SavingsAccount (Interest: 5% per year)
-o CurrentAccount (Interest: No interest)
-3. Overload the deposit method in both derived classes to handle:
-o Deposit via cash
-o Deposit via check
-o Deposit via online transfer
-4. Override the withdraw method in both derived classes with different rules:
-o SavingsAccount: Cannot withdraw if balance is below $500
-o CurrentAccount: Allows overdraft up to $1000
-5. Implement operator overloading in BankAccount:
-o + to add two account balances
-o - to subtract an amount from balance
-o * to apply interest on balance
-o / to calculate equal installment payments from balance
-6. Create objects of both SavingsAccount and CurrentAccount, demonstrate method
-overloading, overriding, and operator overloading with real transaction examples.
-*/
 
 #include <iostream>
 #include <math.h>
