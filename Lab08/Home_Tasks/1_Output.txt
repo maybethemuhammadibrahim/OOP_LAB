@@ -1,0 +1,21 @@
+--- Initial Account States ---
+Account Number: 1001
+Balance: 1000
+Account Number: 1002
+Balance: 400
+
+--- Deposits ---
+200 has been deposited into 1001
+4800 has been deposited into 1001
+500 has been deposited into 1002
+
+--- Withdrawals ---
+600 has been withdrawn from 1001
+1000 has been withdrawn from 1001
+1200 has been withdrawn from 1002
+
+--- Final Account States ---
+Account Number: 1001
+Balance: 4400
+Account Number: 1002
+Balance: -300
