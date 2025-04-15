@@ -5,7 +5,7 @@ class PaymentMethod
 {
 protected:
 public:
-    virtual void processPayment(double amount) {}
+    virtual void processPayment(double amount) = 0;
 };
 
 class CreditCard : public PaymentMethod
